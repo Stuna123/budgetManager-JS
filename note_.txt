@@ -1,0 +1,1378 @@
+Différente CSS 
+
+CSS 1 :
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital");
+
+    :root {
+        --box-shadow: rgba(124, 150, 145, 0.757) 0px 3px 8px;
+        --borderColor: #007bff;
+        --shadow-Color: rgb(48, 40, 40);
+        --text-Color: white;
+        --original:#F5F7FA; /* Original color for outer-wrap but I just change it for fun */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {    
+        background-color: var(--box-shadow);
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        text-decoration: underline solid #393E46;
+        font-size: 23px;
+        text-decoration: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #cancelEdit:hover {
+        cursor: pointer;
+    }
+
+    /*********************** Outer-wrap ***********************/
+    .outer-wrap {
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--shadow-Color); 
+        padding: 30px;
+    }
+
+    /*********************** Inner-wrap ***********************/
+    .inner-wrap {
+        max-width: 1200px;
+        margin: auto;    
+    }
+
+    /*********************** Heading ***********************/
+    .heading {
+        /*margin: 10px auto 40px auto;*/
+        margin: 30px auto;
+        padding: 0px 20px;
+    }
+
+    .heading .title {
+        font-size: 30px;
+        color: var(--text-Color);
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .heading .subtitle {
+        font-size: 20px;
+        color: var(--text-Color);
+        font-weight: 300;
+        text-align: center;
+    }
+
+    /*********************** Transaction Control ***********************/
+    .transaction-control {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap; /* Les element vont s'imbriquer l'un sur l'autre */
+        gap: 10px;
+        margin: 30px auto; /* 30px : pour haut & bas | auto : gauche & droite */
+    }
+
+    .actions, .stats {
+        flex-grow: 1;
+        background-color: var(--text-Color);
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+        border-radius: 5px;
+        margin: 0px 10px;
+    }
+
+    /*********** actions ***********/
+    .actions .add {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .actions .add input {
+        border-radius: 5px;
+        border: 1px solid rgba(124, 150, 145, 0.757);
+        font-size: 18px;
+        padding: 5px;
+        margin: 10px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .actions .add input:hover {
+        border-color: #007bff;
+    }
+
+    .actions .add input[type="submit"] {
+        padding: 7px 15px;
+        border-radius: 5px;
+        border: none;
+        background-color: #2666CF;
+        color: var(--text-Color);
+        box-shadow: var(--box-shadow);
+    } 
+    .actions .add input[type="submit"]:hover {
+        background-color: #1149a4;
+        cursor: pointer;
+        transition: 0.5s ease;
+        transform: scale(1.03);
+    }
+
+    #transaction.update {
+        background-color: #ff9f43;
+        color: #fff;
+    }
+
+    #transaction.update:hover {
+        background-color: #ff7f00;
+        transform: scale(1.05);
+    }
+
+    .add input#transaction[value="Update"] {
+        background-color: #FFA500;
+    }
+
+
+    /*********** stats ***********/
+    .stats p {
+        background-color: #bed7ff;
+        margin: 20px 10px;
+        padding: 10px 20px;
+        box-shadow: var(--box-shadow);
+        font-size: 18px;
+        border-radius: 2px;
+        text-align: center;
+    }
+
+    .stats p.balance {
+        background-color: #fff2dd92;
+        border-right: 10px solid #f4b240;
+    }
+
+    .stats p.income {
+        background-color: #e7fff1ad;
+        border-right: 10px solid #32a171;
+    }
+
+    .stats p.expense {
+        background-color: #ffeef0bb;
+        border-right: 10px solid #0b65f7;
+    }
+
+    .stats p span {
+        font-size: 18px;
+    }
+
+    /*********** canvas ***********/
+    #chartContainer {
+        max-width: 500px;
+        margin: 20px auto;
+        text-align: center;
+        background-color: white;
+    }
+
+    #chartContainer canvas {
+        height: 300px;
+    }
+
+    #noDataMessage {
+        color: #e51212;
+        display: none;
+        font-size: large;
+        font-weight: 700;
+        margin-top: auto;
+    }
+
+    /*********************** Transaction History ***********************/
+    .transaction-history {
+        margin: 40px 10px;
+        background-color: var(--text-Color);
+        border-radius: 10px;
+        padding: 30px 0px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .search-box {
+        text-align: center;
+        margin: 20px 0;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 70%;
+        padding: 10px;
+        font-size: 18px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+        border-color: var(--borderColor);
+    }
+
+    .search-box button {
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        background-color: #007bff;
+        padding: 11px;
+        border: none;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        font-size: 1.2rem;    
+    }
+
+    .search-box button:hover {
+        cursor: pointer;
+        color: #fff;
+        transition: .4s ease;
+    }
+
+    .records {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px;
+    }
+
+    .records div {
+        flex-grow: 1;
+        padding: 10px;
+    }
+
+    .records li {
+        width: 100%;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #d4dddf92;
+        padding: 10px;
+        margin: 12px 0px;
+        min-width: 250px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .records li:hover {
+        transform: scale(1.03);
+        transition: transform 0.2s ease;
+    }
+
+    .records .income li {
+        display: flex;
+        border-left: 10px solid #2666CF;
+    }
+
+    .records .expense li {
+        border-left: 10px solid #2666CF;
+    }
+
+    .records li p:first-child {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .records span {
+        font-size: 18px;
+    }
+
+    .records span#time {
+        color: #32a171;
+        font-size: 12px;
+    }
+
+    .records i.delete {
+        margin-left: 10px;
+        color: #082032;
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .records i.delete:hover {
+        margin-left: 10px;
+        color: #B42B51;
+        cursor: pointer;
+    }
+
+    .records i.edit {
+        margin-left: 2px;
+        color: rgb(167, 26, 26);
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .records i.edit:hover {
+        margin-left: 2px;
+        color: red;
+        cursor: pointer;
+    }
+
+
+    /*********************** Merges styles ***********************/
+    .actions, .stats, .transaction-history {
+        transition: transform .3s ease;
+    }
+
+    .actions:hover, .stats:hover, .transaction-history:hover {
+        transform: scale(1.03);
+    }
+
+
+    /*********************** Media query ***********************/
+    @media screen and (max-width: 450px) {
+        .outer-wrap {
+            padding: 10px;
+        }
+
+        .inner-wrap {
+            padding: 0 10px;
+        }
+
+        .actions,
+        .stats,
+        .transaction-history {
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        .records {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .records li {
+            min-width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            right: 0;
+        }
+
+        .heading .title {
+            font-size: 24px;
+        }
+
+        .heading .subtitle {
+            font-size: 16px;
+        }
+
+    }
+
+CSS 2 :
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+    :root {
+        --box-shadow: rgba(124, 150, 145, 0.757) 0px 3px 8px;
+        --borderColor: #007bff;
+        --shadow-Color: rgb(48, 40, 40);
+        --text-Color: white;
+        --original:#F5F7FA; /* Original color for outer-wrap but I just change it for fun */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {    
+        background-color: var(--box-shadow);
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        text-decoration: underline solid #393E46;
+        font-size: 23px;
+        text-decoration: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #cancelEdit {
+        background-color: var(--borderColor);
+        color: var(--text-Color);
+    }
+
+    #cancelEdit:hover {
+        cursor: pointer;
+        transition: 0.5s ease;
+        transform: scale(1.03);
+    }
+
+    /*********************** Outer-wrap ***********************/
+    .outer-wrap {
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 15px;
+        background-color: var(--shadow-Color); 
+    }
+
+    /*********************** Inner-wrap ***********************/
+    .inner-wrap {
+        max-width: 1200px;
+        margin: auto;    
+    }
+
+    /*********************** Heading ***********************/
+    .heading {
+        margin: 20px auto 30px;
+        text-align: center;
+        color: var(--text-Color);
+    }
+
+    .heading .title {
+        font-size: 2rem;
+        color: var(--text-Color);
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .heading .subtitle {
+        font-size: 1.2rem;
+        color: var(--text-Color);
+        font-weight: 300;
+        text-align: center;
+    }
+
+    /*********************** Transaction Control ***********************/
+    .transaction-control {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap; /* Les element vont s'imbriquer l'un sur l'autre */
+        margin: 30px auto; /* 30px : pour haut & bas | auto : gauche & droite */
+    }
+
+    /* Forms + Stats + Chart containers */
+    .transaction-control > div, #chartContainer {
+        flex: 1 1 calc(33.33% - 20px);
+        min-width: 260px;
+    }
+
+    .actions, .stats, .transaction-history, #chartContainer {
+        background-color: var(--text-Color);
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+        border-radius: 10px;
+    }
+
+    /*********** actions ***********/
+    .actions .add {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .actions form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .actions input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+    }
+
+    .actions .add input {
+        border-radius: 5px;
+        border: 1px solid rgba(124, 150, 145, 0.757);
+        font-size: 18px;
+        padding: 5px;
+        margin: 10px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .actions .add input:hover {
+        border-color: #007bff;
+    }
+
+    .actions .add input[type="submit"] {
+        padding: 7px 15px;
+        border-radius: 5px;
+        border: none;
+        background-color: #2666CF;
+        color: var(--text-Color);
+        box-shadow: var(--box-shadow);
+    } 
+    .actions .add input[type="submit"]:hover {
+        background-color: #1149a4;
+        cursor: pointer;
+        transition: 0.5s ease;
+        transform: scale(1.03);
+    }
+
+    #transaction.update {
+        background-color: #ff9f43;
+        color: #fff;
+    }
+
+    #transaction.update:hover {
+        background-color: #ff7f00;
+        transform: scale(1.05);
+    }
+
+    .add input#transaction[value="Update"] {
+        background-color: #FFA500;
+    }
+
+    /*********** stats ***********/
+    .stats p {
+        background-color: #bed7ff;
+        margin: 20px 10px;
+        padding: 10px 20px;
+        box-shadow: var(--box-shadow);
+        font-size: 18px;
+        border-radius: 2px;
+        text-align: center;
+    }
+
+    .stats p.balance {
+        background-color: #fff2dd92;
+        border-right: 10px solid #f4b240;
+    }
+
+    .stats p.income {
+        background-color: #e7fff1ad;
+        border-right: 10px solid #32a171;
+    }
+
+    .stats p.expense {
+        background-color: #ffeef0bb;
+        border-right: 10px solid #0b65f7;
+    }
+
+    .stats p span {
+        font-size: 18px;
+    }
+
+    /*********** canvas ***********/
+    #chartContainer {
+        max-width: 300px;
+        margin: 20px auto;
+        text-align: center;
+        border-radius: 10%;
+        /* height: 10%; */
+    }
+
+    #chartContainer:hover {
+        box-shadow: var(--box-shadow);    
+        transition: 0.5s ease;
+        transform: scale(1.03);
+
+    }
+
+    #balancechart {
+        height: 300px !important;
+    }
+
+    #noDataMessage {
+        color: #e51212;
+        display: none;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 50%;
+    }
+
+    /*********************** Transaction History ***********************/
+    .transaction-history {
+        margin: 40px 10px;
+        background-color: var(--text-Color);
+        border-radius: 10px;
+        padding: 30px 0px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .search-box {
+        margin-bottom: 15px;
+        margin: 0 20px;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .search-box button {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px 14px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .search-box button:hover {
+        background-color: #045ebf;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    /*
+    .search-box {
+        text-align: center;
+        margin: 20px 0;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 70%;
+        padding: 10px;
+        font-size: 18px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+        border-color: var(--borderColor);
+    }
+
+    .search-box button {
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #007bff;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;    
+    }
+
+    .search-box button:hover {
+        cursor: pointer;
+        color: #fff;
+        transition: .4s ease;
+    }
+    */
+
+    .records {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px;
+    }
+
+    .records div {
+        flex-grow: 1;
+        padding: 10px;
+    }
+
+    .records li {
+        background: #f8f9fa;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+        border-left: 6px solid #007bff;
+    }
+
+    .records li:hover {
+        transform: scale(1.03);
+        transition: transform 0.2s ease;
+    }
+
+    .records .income li {
+        display: flex;
+        border-left: 10px solid #2666CF;
+    }
+
+    .records .expense li {
+        border-left: 10px solid #2666CF;
+    }
+
+    .records li p:first-child {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .records span {
+        font-size: 18px;
+    }
+
+    .records span#time {
+        color: #32a171;
+        font-size: 12px;
+    }
+
+    .records i.delete {
+        margin-left: 10px;
+        color: #082032;
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .records i.delete:hover {
+        margin-left: 10px;
+        color: #B42B51;
+        cursor: pointer;
+    }
+
+    .records i.edit {
+        margin-left: 2px;
+        color: rgb(167, 26, 26);
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .records i.edit:hover {
+        margin-left: 2px;
+        color: red;
+        cursor: pointer;
+    }
+
+
+    /*********************** Merges styles ***********************/
+    .actions, .stats, .transaction-history {
+        transition: transform .3s ease;
+    }
+
+    .actions:hover, .stats:hover, .transaction-history:hover {
+        transform: scale(1.03);
+    }
+
+
+    /*********************** Media query ***********************/
+    /* Tablets */
+    @media screen and (max-width: 900px) {
+        .transaction-control {
+            flex-direction: column;
+        }
+    }
+
+    /* Mobile L */
+    @media screen and (max-width: 600px) {
+        .heading .title {
+            font-size: 1.6rem;
+        }
+
+        .transaction-control > div,
+        #chartContainer {
+            min-width: 100%;
+        }
+
+        .records {
+            flex-direction: column;
+        }
+    }
+
+    /* Mobile S (320px - 380px) */
+    @media screen and (max-width: 380px) {
+        .heading .title {
+            font-size: 1.4rem;
+        }
+
+        .actions input,
+        .search-box input {
+            font-size: 0.9rem;
+        }
+
+        .records li {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    /* Ultra-small screens (150px - 280px) */
+    @media screen and (max-width: 280px) {
+        * {
+            font-size: 12px;
+        }
+
+        .transaction-control > div {
+            padding: 10px;
+        }
+
+        .records li {
+            padding: 10px;
+            flex-direction: column;
+        }
+
+        #balanceChart {
+            max-height: 180px !important;
+        }
+    }
+
+CSS 3 : 
+    /* =========================
+    Budget Tracker — Optimized CSS
+    - Colors fixed for Balance / Income / Expense
+    - Animations for new / updated items
+    - Responsive: desktop -> tablet -> mobile -> tiny screens
+    - Chart area styled
+    ========================= */
+
+    /* ---------- Variables ---------- */
+    :root{
+    --bg-site: #302828;            /* page background */
+    --card-bg: #ffffff;            /* white for panels */
+    --shadow: rgba(124,150,145,0.75) 0px 3px 8px;
+    --text: #0b0b0b;
+    --muted: #6b6b6b;
+
+    /* Statistics colors */
+    --stat-balance-bg: rgba(255,242,221,0.58); /* #fff2dd92 */
+    --stat-balance-right: #f4b240;
+
+    --stat-income-bg: rgba(231,255,241,0.68);  /* #e7fff1ad */
+    --stat-income-right: #32a171;
+
+    --stat-expense-bg: rgba(255,238,240,0.73); /* #ffeef0bb */
+    --stat-expense-right: #0b65f7;
+
+    /* transaction border colors */
+    --income-border: #32a171;
+    --expense-border: #0b65f7;
+
+    --accent: #2666CF;
+    --accent-dark: #1149a4;
+    }
+
+    /* ---------- Reset & base ---------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+    background-color:var(--bg-site);
+    font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    color:var(--text);
+    line-height:1.3;
+    padding:0 8px;
+    }
+
+    /* ---------- Layout containers ---------- */
+    .outer-wrap{
+    width:100%;
+    min-height:100vh;
+    padding:28px 10px;
+    }
+
+    .inner-wrap{
+    max-width:1200px;
+    margin:0 auto;
+    }
+
+    /* ---------- Heading ---------- */
+    .heading{
+    margin:18px auto 26px;
+    text-align:center;
+    color:#fff;
+    }
+    .heading .title{font-size:2rem;font-weight:700}
+    .heading .subtitle{font-weight:300;margin-top:6px;color:#e6e6e6}
+
+    /* ---------- Transaction Control (3 columns) ---------- */
+    .transaction-control{
+    display:flex;
+    gap:20px;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+    }
+
+    /* Each panel (form / stats / chart) */
+    .transaction-control > div,
+    #chartContainer{
+    flex:1 1 calc(33.33% - 20px);
+    min-width:260px;
+    background:var(--card-bg);
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    padding:18px;
+    }
+
+    /* Keep chart container square-ish on large screens */
+    #chartContainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    }
+
+    /* ---------- Form / Actions ---------- */
+    .actions form{display:flex;flex-direction:column;gap:12px}
+    .actions input[type="text"],
+    .actions input[type="number"],
+    .search-box input{
+    padding:10px 12px;border-radius:6px;border:1px solid #ddd;font-size:1rem;
+    outline:none;
+    }
+    .actions input:focus{border-color:var(--accent)}
+    .actions input[type="submit"]{
+    padding:10px 12px;border-radius:8px;border:0;background:var(--accent);
+    color:#fff;font-weight:600;box-shadow:var(--shadow);cursor:pointer;
+    transition:transform .18s ease, background .18s ease;
+    }
+    .actions input[type="submit"]:hover{transform:translateY(-2px);background:var(--accent-dark)}
+
+    /* Cancel button style (hidden by default) */
+    #cancelEdit.hidden{display:none}
+    #cancelEdit{
+    padding:8px 10px;border-radius:6px;border:none;background:var(--accent-dark);
+    color:#fff;cursor:pointer;
+    }
+    #cancelEdit:hover{transform:scale(1.02)}
+
+    /* ---------- Statistics boxes ---------- */
+    .stats p{
+    margin:16px 8px;padding:12px 16px;border-radius:8px;
+    box-shadow:var(--shadow);font-size:1rem;text-align:center;
+    }
+    .stats p span{font-weight:700}
+
+    /* Balance / Income / Expense visuals */
+    .stats p.balance{background:var(--stat-balance-bg);border-right:10px solid var(--stat-balance-right)}
+    .stats p.income{background:var(--stat-income-bg);border-right:10px solid var(--stat-income-right)}
+    .stats p.expense{background:var(--stat-expense-bg);border-right:10px solid var(--stat-expense-right)}
+
+    /* ---------- Chart ---------- */
+    #chartContainer canvas{
+    width:100% !important;
+    max-width:320px;
+    height:260px !important;
+    display:block;
+    }
+    #noDataMessage{
+    display:none;color:#e51212;font-weight:700;margin-top:12px;
+    }
+
+    /* When chart has content, show legend nicely */
+    .chart-legend{margin-top:8px;font-size:0.9rem;color:var(--muted)}
+
+    /* ---------- Transaction History ---------- */
+    .transaction-history{
+    margin-top:12px;padding:22px 18px;border-radius:12px;
+    background:var(--card-bg);
+    }
+
+    /* Search box (top of history) */
+    .search-box{position:relative;margin:0 10px 18px}
+    .search-box input{width:100%;padding:10px;border-radius:6px;border:1px solid #ddd}
+    .search-box button{
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    background:var(--accent);border:none;color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;
+    }
+    .search-box button:hover{background:var(--accent-dark)}
+
+    /* Records (two columns) */
+    .records{
+    display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;margin-top:8px;
+    }
+    .records > div{flex:1 1 48%;min-width:260px}
+
+    /* list items */
+    .records ul{padding:8px 4px}
+    .records li{
+    background:#f8f9fa;border-radius:8px;padding:14px;display:flex;align-items:center;
+    justify-content:space-between;gap:12px;margin:10px 0;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+    border-left:10px solid transparent;
+    opacity:1;
+    }
+
+    /* Income / Expense border-left colors */
+    .records .income li{border-left-color:var(--income-border)}
+    .records .expense li{border-left-color:var(--expense-border)}
+
+    /* li details */
+    .records li p{flex:1;display:flex;flex-direction:column;gap:6px}
+    .records li p span#time{font-size:0.85rem;color:#2f9f78}
+
+    /* amount & actions */
+    .records li > span{min-width:70px;text-align:right;font-weight:700;font-size:1rem}
+    .records .actionBtnIcone{display:flex;gap:8px;align-items:center;margin-left:10px}
+    .records i{cursor:pointer;font-size:1.05rem;color:#082032}
+    .records i.edit{color:#a71a1a}
+    .records i.delete:hover{color:#b42b51}
+
+    /* animate on hover */
+    .records li:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,0.12)}
+
+    /* ---------- Animations ---------- */
+    /* appear for newly added items (runs on insert) */
+    @keyframes slideUpFade {
+    from{opacity:0; transform: translateY(10px)}
+    to{opacity:1; transform: translateY(0)}
+    }
+    .records li{animation: slideUpFade 300ms ease forwards}
+
+    /* highlight pulse for update (JS can add .highlight to a li) */
+    @keyframes highlightPulse {
+    0%{box-shadow:0 0 0 0 rgba(50,161,113,0.0)}
+    50%{box-shadow:0 0 0 8px rgba(50,161,113,0.12)}
+    100%{box-shadow:0 0 0 0 rgba(50,161,113,0.0)}
+    }
+    .records li.highlight{animation: highlightPulse 900ms ease}
+
+    /* ---------- Small utility ---------- */
+    .text-muted{color:#777;font-size:0.9rem}
+    .center{text-align:center}
+
+    /* ---------- Responsive ---------- */
+    /* Large tablets -> stack into column for transaction-control */
+    @media (max-width:900px){
+    .transaction-control{flex-direction:column;align-items:stretch}
+    .transaction-control > div{min-width:100%}
+    .records{flex-direction:column}
+    .records > div{width:100%}
+    }
+
+    /* Mobile L */
+    @media (max-width:600px){
+    .heading .title{font-size:1.6rem}
+    .transaction-control{gap:14px}
+    #chartContainer canvas{max-width:260px;height:220px !important}
+    .records > div{min-width:100%}
+    .stats p{margin:12px 6px}
+    }
+
+    /* Mobile S (<=380) — compact */
+    @media (max-width:380px){
+    .heading .title{font-size:1.3rem}
+    .actions input, .search-box input{font-size:0.95rem}
+    .records li{flex-direction:column;align-items:flex-start;padding:12px}
+    .records li > span{align-self:flex-end;margin-top:8px}
+    #chartContainer canvas{height:180px !important}
+    }
+
+    /* Ultra tiny screens */
+    @media (max-width:260px){
+    body{font-size:13px}
+    .transaction-control > div{padding:10px}
+    .records li{padding:10px}
+    #chartContainer canvas{height:150px !important}
+    }
+
+    /* ---------- Accessibility / print ---------- */
+    @media print{
+    body{background:#fff;color:#000}
+    .transaction-control > div, .transaction-history{box-shadow:none;border:1px solid #ddd}
+    }
+
+    /* ---------- Notes for JS hooks (you can use these classes in JS) ----------
+    - To visually mark a li as updated: add class "highlight" to the <li>
+        e.g. li.classList.add('highlight'); setTimeout(()=> li.classList.remove('highlight'), 1100);
+    - Newly appended <li> will automatically run the slideUpFade animation.
+    - Chart area is responsive; Chart.js will adapt when canvas size changes.
+    --------------------------------------------------------------------- */
+
+CSS 4 : 
+    /* ---------------------- IMPORTS ------------------------ */
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+    /* ---------------------- ROOT VARIABLES ------------------------ */
+    :root {
+        --box-shadow: rgba(124, 150, 145, 0.3) 0px 4px 8px;
+        --borderColor: #007bff;
+        --text-Color: white;
+        --shadow-Color: #1f1f1f;
+    }
+
+    /* ---------------------- GLOBAL ------------------------ */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background-color: var(--shadow-Color);
+    }
+
+    /* ---------------------- LAYOUT ------------------------ */
+    .outer-wrap {
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 15px;
+        background-color: var(--shadow-Color);
+    }
+
+    .inner-wrap {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    /* ---------------------- TITLES ------------------------ */
+    .heading {
+        margin: 20px auto 30px;
+        text-align: center;
+        color: var(--text-Color);
+    }
+
+    .heading .title {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .heading .subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    /* ---------------------- TRANSACTION CONTROL ------------------------ */
+    .transaction-control {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Forms + Stats + Chart containers */
+    .transaction-control > div,
+    #chartContainer {
+        flex: 1 1 calc(33.33% - 20px);
+        min-width: 260px;
+    }
+
+    /* ---------------------- ACTIONS ------------------------ */
+    .actions,
+    .stats,
+    .transaction-history,
+    #chartContainer {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .actions form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .actions input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+    }
+
+    .actions input[type="submit"],
+    #cancelEdit {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .actions input[type="submit"]:hover {
+        background-color: #005ad6;
+    }
+
+    #cancelEdit {
+        background-color: #e74c3c;
+    }
+
+    #cancelEdit:hover {
+        background-color: #c0392b;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* ---------------------- STATS ------------------------ */
+    .stats p {
+        margin: 10px 0;
+        padding: 12px;
+        background-color: #f3f5f7;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    /* ---------------------- CHART ------------------------ */
+    #chartContainer {
+        text-align: center;
+    }
+
+    #balanceChart {
+        width: 100% !important;
+        max-height: 260px;
+    }
+
+    #noDataMessage {
+        display: none;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #e74c3c;
+    }
+
+    /* ---------------------- TRANSACTION HISTORY ------------------------ */
+    .transaction-history {
+        margin-top: 30px;
+    }
+
+    .search-box {
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .search-box button {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px 14px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .records {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .records > div {
+        flex: 1 1 300px;
+    }
+
+    .records li {
+        background: #f8f9fa;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+        border-left: 6px solid #007bff;
+    }
+
+    /* ---------------------- MOBILE RESPONSIVE ------------------------ */
+
+    /* Tablets */
+    @media screen and (max-width: 900px) {
+        .transaction-control {
+            flex-direction: column;
+        }
+    }
+
+    /* Mobile L */
+    @media screen and (max-width: 600px) {
+        .heading .title {
+            font-size: 1.6rem;
+        }
+
+        .transaction-control > div,
+        #chartContainer {
+            min-width: 100%;
+        }
+
+        .records {
+            flex-direction: column;
+        }
+    }
+
+    /* Mobile S (320px - 380px) */
+    @media screen and (max-width: 380px) {
+        .heading .title {
+            font-size: 1.4rem;
+        }
+
+        .actions input,
+        .search-box input {
+            font-size: 0.9rem;
+        }
+
+        .records li {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    /* Ultra-small screens (150px - 280px) */
+    @media screen and (max-width: 280px) {
+        * {
+            font-size: 12px;
+        }
+
+        .transaction-control > div {
+            padding: 10px;
+        }
+
+        .records li {
+            padding: 10px;
+            flex-direction: column;
+        }
+
+        #balanceChart {
+            max-height: 180px !important;
+        }
+    }
+

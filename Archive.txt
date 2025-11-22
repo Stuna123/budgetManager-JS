@@ -1,0 +1,1482 @@
+Raccourcir les codes dans certaines étapes, 
+si un code a été écrit dans l'étape précédente pas la peine de l'écrire à nouveau.
+
+Le code complet se trouve dans chaque dernière étape !
+
+Dans cette vidéo, nous allons nous occuper de HMTL 
+Video 1 : Template Structure 
+        HTML
+            Etape 1 : Structure de notre page
+
+                <!DOCTYPE html>
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                        <title> Budget Tracker </title>
+                        <link rel="stylesheet" href="style.css">
+                    </head>
+
+                    <body>
+                        <main>
+                            <div class="outer-wrap">
+                                <div class="inner-wrap">
+                                    <section class="heading">
+                                    </section>
+
+                                    <section class="transaction-control">
+                                    </section>
+
+                                    <section class="transaction-history">
+                                    </section>
+                                </div>
+                            </div>
+                        </main>
+
+                        <script src="script.js"></script>    
+                    </body>
+                </html>
+                
+            Etape 2 : On code la class "heading" de la balise section
+
+                    A partir d'ici, nous allons nous concentrer seulement sur l'écriture du body.
+                    <head> ... </head>
+                    <body>
+                        <main>
+                            <div class="outer-wrap">
+                                <div class="inner-wrap">
+                                    <section class="heading">
+                                        <p class="title"> Budget Tracker </p>
+                                        <p class="subtitle"> Easiest Way To Track Your Transaction </p>
+                                    </section>
+
+                                    <section class="transaction-control">
+                                    </section>
+
+                                    <section class="transaction-history">
+                                    </section>
+                                </div>
+                            </div>
+                        </main>
+
+                        <script src="script.js"></script>    
+                    </body> 
+
+            Etape 3 : On code la class "transaction-control" de la balise section
+
+                <head> ... </head>
+                <body>
+                    <main>
+                        <div class="outer-wrap">
+                            <div class="inner-wrap">
+                                <section class="heading">
+                                    <p class="title"> Budget Tracker </p>
+                                    <p class="subtitle"> Easiest Way To Track Your Transaction </p>
+                                </section>
+
+                                <section class="transaction-control">
+                                    <div class="actions">
+                                        <h3> Add Transactions </h3>
+                                        <form class="add">
+                                            <input type="text" name="source" placeholder="Source" autocomplete="off">
+                                            <input type="number" name="amount" placeholder="Amount" autocomplete="off">
+                                            <input type="submit" value="Add Transaction">
+                                        </form>
+                                    </div>
+
+                                    <div class="stats">
+                                        <h3>Statistics</h3>
+                                        <p class="balance">
+                                            Balance: $<span id="balance">651</span>
+                                        </p>
+                                        <p class="income">
+                                            Income: $<span id="income">700</span>
+                                        </p>
+                                        <p class="expense">
+                                            Expense: $<span id="expense">49</span>
+                                        </p>
+                                    </div>
+                                </section>
+
+                                <section class="transaction-history">
+                                </section>
+                            </div>
+                        </div>
+                    </main>
+
+                    <script src="script.js"></script>    
+                </body> 
+
+            Etape 4 : On code la class "transaction-history" de la balise section
+                <body>
+                    <main>
+                        <div class="outer-wrap">
+                            <div class="inner-wrap">
+                                <section class="heading">
+                                    <p class="title"> Budget Tracker </p>
+                                    <p class="subtitle"> Easiest Way To Track Your Transaction </p>
+                                </section>
+
+                                <section class="transaction-control">
+                                    <div class="actions">
+                                        <h3> Add Transactions </h3>
+                                        <form class="add">
+                                            <input type="text" name="source" placeholder="Source" autocomplete="off">
+                                            <input type="number" name="amount" placeholder="Amount" autocomplete="off">
+                                            <input type="submit" value="Add Transaction">
+                                        </form>
+                                    </div>
+                                    <div class="stats">
+                                        <h3>Statistics</h3>
+                                        <p class="balance">
+                                            Balance: $<span id="balance">651</span>
+                                        </p>
+                                        <p class="income">
+                                            Income: $<span id="income">700</span>
+                                        </p>
+                                        <p class="expense">
+                                            Expense: $<span id="expense">49</span>
+                                        </p>
+                                    </div>
+                                </section>
+
+                               <section class="transaction-history">
+                                    <h3>Transaction History</h3>
+                                    <div class="records">
+                                        <div class="income">
+                                            <h3>Income</h3>
+                                            <ul class="income-list">
+                                                <li data-id="">
+                                                    <p>
+                                                        <span> Freelancing - JS Project </span>
+                                                        <span> 12:45:38 AM 5/19/2025</span>
+                                                    </p>
+                                                    <span>$700</span>
+                                                    <i class="bi bi-trash delete"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="expense">
+                                            <h3>Expense</h3>
+                                            <ul class="expense-list">
+                                                <li data-id="">
+                                                    <p>
+                                                        <span> Streaming Room </span>
+                                                        <span> 12:44:21 AM 5/19/2025</span>
+                                                    </p>
+                                                    <span>$700</span>
+                                                    <i class="bi bi-trash delete"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </main>
+
+                    <script src="script.js"></script>    
+                </body>
+
+            Etape 5 : Code complet du HTML
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                        <title> Budget Tracker </title>
+                        <link rel="stylesheet" href="style.css">
+                    </head>
+
+                    <body>
+                        <main>
+                            <div class="outer-wrap">
+                                <div class="inner-wrap">
+                                    <section class="heading">
+                                        <p class="title"> Budget Tracker </p>
+                                        <p class="subtitle"> Easiest Way To Track Your Transaction </p>
+                                    </section>
+
+                                    <section class="transaction-control">
+                                        <div class="actions">
+                                            <h3> Add Transaction </h3>
+                                            <form class="add">
+                                                <input type="text" name="source" placeholder="Source" autocomplete="off">
+                                                <input type="number" name="amount" placeholder="Amount" autocomplete="off">
+                                                <input type="submit" value="Add Transaction">
+                                            </form>
+                                        </div>
+                                        <div class="stats">
+                                            <h3>Statistics</h3>
+                                            <p class="balance">
+                                                Balance: $<span id="balance">651</span>
+                                            </p>
+                                            <p class="income">
+                                                Income: $<span id="income">700</span>
+                                            </p>
+                                            <p class="expense">
+                                                Expense: $<span id="expense">49</span>
+                                            </p>
+                                        </div>
+                                    </section>
+
+                                    <section class="transaction-history">
+                                        <h3>Transaction History</h3>
+                                        <div class="records">
+                                            <div class="income">
+                                                <h3>Income</h3>
+                                                <ul class="income-list">
+                                                    <li data-id="">
+                                                        <p>
+                                                            <span> Freelancing - JS Project </span>
+                                                            <span id="time"> 12:45:38 AM 5/19/2025</span>
+                                                        </p>
+                                                        <span>$700</span>
+                                                        <i class="bi bi-trash delete"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="expense">
+                                                <h3>Expense</h3>
+                                                <ul class="expense-list">
+                                                    <li data-id="">
+                                                        <p>
+                                                            <span> Streaming Room </span>
+                                                            <span> 12:44:21 AM 5/19/2025</span>
+                                                        </p>
+                                                        <span id="time">$49</span>
+                                                        <i class="bi bi-trash delete"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </main>
+
+                        <script src="script.js"></script>    
+                    </body>
+                </html>
+
+A partir de la video 3, nous allons nous occuper de CSS
+Video 2 : Template Structure (suite & fin) 
+    ⚠️ Ceci sera un peu long mais fun, donc, accroche et profite !
+            Now, let's dive in champion 💪🔥
+
+    CSS :
+        Etape 1 : Intro General (IG)
+
+            /*********************** Code le plan global ***********************/ 
+
+                @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+                @import url("https://fonts.googleapis.com/css2?family=Poppins:ital");
+
+                :root {
+                    --box-shadow: rgba(124, 150, 145, 0.757) 0px 3px 8px;
+                    --shadow-Color: rgb(48, 40, 40);
+                    --text-Color: white;
+                    --original:#F5F7FA; /* Original color for outer-wrap but I just change it for fun */
+                }
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-size: 16px;
+                    font-family: 'Poppins', sans-serif;
+                    text-decoration: none;
+                    list-style: none;
+                } 
+
+            La prohaine étape sera centré sur wrap (outer-wrap & inner-wrap)
+
+        Etape 2 : Wrap outer and inner 
+
+            /************* Identique au code de l'IG *************/    
+                @import url(...)
+                @import url(...)
+                :root { ... }
+                * { ... } 
+
+            /*********************** Outer-wrap ***********************/
+                .outer-wrap {
+                    width: 100%;
+                    min-height: 100vh;
+                    background-color: var(--box-shadow); 
+                    padding: 30px;
+                }
+
+            /*********************** Inner-wrap ***********************/
+                .inner-wrap {
+                    max-width: 1200px;
+                    margin: auto;    
+                }
+
+            La prohaine étape sera centré sur le Heading.
+
+        Etape 3 : Heading 
+
+            /************* Identique au code de l'IG *************/    
+                @import url(...)
+                @import url(...)
+                :root { ... }
+                * { ... } 
+
+            /*********************** Title ***********************/
+                h3 {
+                    text-align: center;
+                    margin-bottom: 15px;
+                    text-decoration: underline solid #393E46;
+                    font-size: 23px;
+                }
+
+            /*********************** Outer-wrap ***********************/
+                .outer-wrap {
+                    width: 100%;
+                    min-height: 100vh;
+                    background-color: var(--shadow-Color); 
+                    padding: 30px;
+                }
+
+            /*********************** Inner-wrap ***********************/
+                .inner-wrap {
+                    max-width: 1200px;
+                    margin: auto;    
+                }
+
+            /*********************** Heading ***********************/
+                .heading {
+                    margin: 10px auto 40px auto;
+                }
+
+                .heading .title {
+                    font-size: 30px;
+                    color: var(--text-Color);
+                    font-weight: 500;
+                    text-align: center;
+                }
+
+                .heading .subtitle {
+                    font-size: 30px;
+                    color: var(--text-Color);
+                    font-weight: 500;
+                    text-align: center;
+                }
+
+            La prohaine étape sera centré sur Transaction Control et tous ces éléments.
+
+        Etape 4 : Transaction control
+
+            /*********************** Transaction Control ***********************/ 
+                .transaction-control {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap; /* Les element vont s'imbriquer l'un sur l'autre */
+                    gap: 10px;
+                    margin: 30px auto; /* 30px : pour haut & bas | auto : gauche & droite */
+                }
+
+                .actions, .stats {
+                    flex-grow: 1;
+                    background-color: var(--text-Color);
+                    padding: 20px;
+                    box-shadow: var(--box-shadow);
+                    border-radius: 5px;
+                    margin: 0px 10px;
+                }
+
+                4.1 : On modifie la class="action" de la section transaction-control 
+                    le precedent code avant Transaction Control, n'a pas besoin d'être repris car rien ne change.
+                    /*********************** Transaction Control ***********************/
+                    .transaction-control {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap; /* Les element vont s'imbriquer l'un sur l'autre */
+                        gap: 10px;
+                        margin: 30px auto; /* 30px : pour haut & bas | auto : gauche & droite */
+                    }
+
+                    .actions, .stats {
+                        flex-grow: 1;
+                        background-color: var(--text-Color);
+                        padding: 20px;
+                        box-shadow: var(--box-shadow);
+                        border-radius: 5px;
+                        margin: 0px 10px;
+                    }
+
+                    /*********** actions ***********/
+                    .actions .add {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 10px;
+                    }
+
+                    .actions .add input {
+                        font-size: 18px;
+                        padding: 5px;
+                        margin: 10px;
+                    }
+
+                    .actions .add input[type="submit"] {
+                        padding: 7px 15px;
+                        border-radius: 5px;
+                        border: none;
+                        background-color: #2666CF;
+                        cursor: pointer; 
+                        color: var(--text-Color);
+                        box-shadow: var(--box-shadow);
+                    } 
+
+                4.2 : On modifie la class="stats" de la section transaction-control
+                    /*********** stats ***********/
+                    .stats p {
+                        background-color: #bed7ff;
+                        margin: 20px; /* L'application se fera de tous les côtés  */
+                        padding: 10px 20px; /* 10px haut,bas | 20px gauche,droite */
+                        box-shadow: var(--box-shadow);
+                        font-size: 18px;
+                        border-radius: 2px;
+                        text-align: center;
+                    }
+
+                    .stats p.balance {
+                        background-color: #fff2dd92;
+                        border-right: 10px solid #f4b240;
+                    }
+
+                    .stats p.income {
+                        background-color: #e7fff1ad;
+                        border-right: 10px solid #32a171;
+                    }
+
+                    .stats p.expense {
+                        background-color: #ffeef0bb;
+                        border-right: 10px solid #0b65f7;
+                    }
+
+            La prohaine étape sera centré sur Transaction History et tous ces éléments.
+
+        Etape 5 : Transaction History
+            Vous pouvez rajouter ces modifications si vous le souhaiter
+            /*********************** Heading ***********************/
+                .heading {
+                    /*margin: 10px auto 40px auto;*/
+                    margin: 30px auto;
+                    padding: 0px 20px;
+                }
+
+            /*********** stats ***********/
+                .stats p {
+                    background-color: #bed7ff;
+                    margin: 20px 10px;
+                    padding: 10px 20px;
+                    box-shadow: var(--box-shadow);
+                    font-size: 18px;
+                    border-radius: 2px;
+                    text-align: center;
+                }
+
+                .stats p span {
+                    font-size: 18px;
+                }
+
+            /*********************** Transaction History ***********************/
+                .transaction-history {
+                    margin: 40px 10px;
+                    background-color: var(--text-Color);
+                    border-radius: 10px;
+                    padding: 30px 0px;
+                    box-shadow: var(--box-shadow);
+                }
+
+                .records {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    margin: 20px;
+                }
+
+                .records div {
+                    flex-grow: 1;
+                    padding: 10px;
+                }
+
+                .records li {
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: #d4dddf92;
+                    padding: 10px;
+                    margin: 12px 0px;
+                    min-width: 250px;
+                    box-shadow: var(--box-shadow);
+                }
+
+                5.1 : On modifie la class="income" & class="expense" de la section transaction-history
+                    /*********** records ***********/
+                        .records .income li {
+                            border-left: 10px solid #2666CF;
+                        }
+
+                        .records .expense li {
+                            border-left: 10px solid #2666CF;
+                        }
+
+                    /*********** records pour les paragraphes p***********/
+                        .records li p:first-child {
+                            flex-grow: 1;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                    /*********** records pour les span ***********/
+                        .records span {
+                            font-size: 18px;
+                        }
+
+                        .records span#time {
+                            color: #32a171;
+                            font-size: 12px;
+                        }
+
+                    /*********** records pour les icones delete ***********/
+                        .records i.delete {
+                            margin-left: 10px;
+                            color: #082032;
+                            cursor: pointer;
+                            font-size: 19px;
+                        }
+
+                        .records i.delete:hover {
+                            margin-left: 10px;
+                            color: #B42B51;
+                            cursor: pointer;
+                        }
+
+        Etape 6 : Code complet du CSS 
+
+            @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:ital");
+
+            :root {
+                --box-shadow: rgba(124, 150, 145, 0.757) 0px 3px 8px;
+                --shadow-Color: rgb(48, 40, 40);
+                --text-Color: white;
+                --original:#F5F7FA; /* Original color for outer-wrap but I just change it for fun */
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-size: 16px;
+                font-family: 'Poppins', sans-serif;
+                text-decoration: none;
+                list-style: none;
+            }
+
+            h3 {
+                text-align: center;
+                margin-bottom: 15px;
+                text-decoration: underline solid #393E46;
+                font-size: 23px;
+            }
+
+            /*********************** Outer-wrap ***********************/
+            .outer-wrap {
+                width: 100%;
+                min-height: 100vh;
+                background-color: var(--shadow-Color); 
+                padding: 30px;
+            }
+
+            /*********************** Inner-wrap ***********************/
+            .inner-wrap {
+                max-width: 1200px;
+                margin: auto;    
+            }
+
+            /*********************** Heading ***********************/
+            .heading {
+                /*margin: 10px auto 40px auto;*/
+                margin: 30px auto;
+                padding: 0px 20px;
+            }
+
+            .heading .title {
+                font-size: 30px;
+                color: var(--text-Color);
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .heading .subtitle {
+                font-size: 30px;
+                color: var(--text-Color);
+                font-weight: 500;
+                text-align: center;
+            }
+
+            /*********************** Transaction Control ***********************/
+            .transaction-control {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap; /* Les element vont s'imbriquer l'un sur l'autre */
+                gap: 10px;
+                margin: 30px auto; /* 30px : pour haut & bas | auto : gauche & droite */
+            }
+
+            .actions, .stats {
+                flex-grow: 1;
+                background-color: var(--text-Color);
+                padding: 20px;
+                box-shadow: var(--box-shadow);
+                border-radius: 5px;
+                margin: 0px 10px;
+            }
+
+            /*********** actions ***********/
+                .actions .add {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 10px;
+                }
+
+            .actions .add input {
+                font-size: 18px;
+                padding: 5px;
+                margin: 10px;
+            }
+
+            .actions .add input[type="submit"] {
+                padding: 7px 15px;
+                border-radius: 5px;
+                border: none;
+                background-color: #2666CF;
+                color: var(--text-Color);
+                box-shadow: var(--box-shadow);
+            } 
+            .actions .add input[type="submit"]:hover {
+                background-color: #1149a4;
+                cursor: pointer;
+            }
+            /*********** stats ***********/
+            .stats p {
+                background-color: #bed7ff;
+                margin: 20px 10px;
+                padding: 10px 20px;
+                box-shadow: var(--box-shadow);
+                font-size: 18px;
+                border-radius: 2px;
+                text-align: center;
+            }
+
+            .stats p.balance {
+                background-color: #fff2dd92;
+                border-right: 10px solid #f4b240;
+            }
+
+            .stats p.income {
+                background-color: #e7fff1ad;
+                border-right: 10px solid #32a171;
+            }
+
+            .stats p.expense {
+                background-color: #ffeef0bb;
+                border-right: 10px solid #0b65f7;
+            }
+
+            .stats p span {
+                font-size: 18px;
+            }
+
+            /*********************** Transaction History ***********************/
+            .transaction-history {
+                margin: 40px 10px;
+                background-color: var(--text-Color);
+                border-radius: 10px;
+                padding: 30px 0px;
+                box-shadow: var(--box-shadow);
+            }
+
+            .records {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 20px;
+                margin: 20px;
+            }
+
+            .records div {
+                flex-grow: 1;
+                padding: 10px;
+            }
+
+            .records li {
+                display: flex;
+                justify-content: space-between;
+                background-color: #d4dddf92;
+                padding: 10px;
+                margin: 12px 0px;
+                min-width: 250px;
+                box-shadow: var(--box-shadow);
+            }
+
+            .records .income li {
+                border-left: 10px solid #2666CF;
+            }
+
+            .records .expense li {
+                border-left: 10px solid #2666CF;
+            }
+
+            .records li p:first-child {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .records span {
+                font-size: 18px;
+            }
+
+            .records span#time {
+                color: #32a171;
+                font-size: 12px;
+            }
+
+            .records i.delete {
+                margin-left: 10px;
+                color: #082032;
+                cursor: pointer;
+                font-size: 19px;
+            }
+
+            .records i.delete:hover {
+                margin-left: 10px;
+                color: #B42B51;
+                cursor: pointer;
+            }
+
+A partir de la video 3, nous allons nous occuper de JS
+Video 3 : Add Transaction 
+
+    Etape 1 
+
+        const form = document.querySelector(".add");
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            console.log(form.source.value, form.amount.value)
+        })
+
+    Etape 2 
+
+        Avec ce code, on ne peut stocker qu'un seul element
+        const form = document.querySelector(".add");
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            const transaction = {
+                source: form.source.value,
+                amount: form.amount.value
+            };
+            // localStorage.setItem("transaction", transaction) il faudra privilegié stringify
+            localStorage.setItem("transaction", JSON.stringify(transaction))
+            
+        })
+
+        Il faudra crée un fichier, on l'appelera data.js par exemple !
+        La suite dans la prochaine vidéo.
+
+Video 4 : Transaction on localStorage 
+
+    Etape 1 : Simple test de recuperation ou visualisation des données
+        const form = document.querySelector(".add");
+
+        // On crée la var pour stocker nos infos, une liste vide
+        let transcations = [];
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            const transaction = {
+                source: form.source.value,
+                amount: form.amount.value
+            };
+            // On va ajouter ici, les informations que l'on capture venant de transaction.
+            // A chaque fois que l'on va faire "push", 
+                il sera ajouté à notre fichier data.js
+            transactions.push(transaction)
+            localStorage.setItem("transaction", JSON.stringify(transaction))
+        })
+
+        Petite explication : 
+            Dans ce code, à chaque fois que l'on fait push, il rajoute dans localStorage.
+            Le seul problème est que chaque actualisation, notre list sera vide.
+            > La solution est d'utiliser Turner operator (operation ternaire)
+                Turner operator syntaxe : condition ? true : false;
+            Suite dans l'etape 2
+            
+    Etape 2 : Ajout de la condition terniaire
+
+        Nous appliquons la solution avec la condition terniaire
+        const form = document.querySelector(".add");
+        let transactions = localStorage.getItem("transactions") !== null ? 
+            JSON.parse(localStorage.getItem("transactions")) : [];
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            const transaction = {
+                source: form.source.value,
+                amount: form.amount.value
+            };
+            transactions.push(transaction)
+            localStorage.setItem("transactions", JSON.stringify(transactions))
+        })
+
+        Petite explication de "localStorage.getItem("transactions") !== null ? 
+        JSON.parse(localStorage.getItem("transactions")) : [];" :
+        
+            Avant d'ajouter l'info, on vérifie si notre transaction est null.
+            Si oui, alors, on recupère notre info avec JSON.parse(...) pour l'ajouter avec push 
+            sinon on crée un list vide qui est []
+        
+        Voilà pour cette étape !
+
+        Pour la suite, on réfléchira aux éléments à ajouter !
+
+    Etape 3 : ajout de l'id (avec Math) & la date (avec time) 
+
+        3.1 
+            const form = document.querySelector(".add");
+            let transactions = localStorage.getItem("transactions") !== null ? 
+                JSON.parse(localStorage.getItem("transactions")) : []; 
+
+            form.addEventListener("submit", event => {
+                event.preventDefault()
+                const time = new Date();
+                const transaction = {
+                    id: Math.random()*1000,
+                    source: form.source.value,
+                    amount: form.amount.value,
+                    time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+                };
+                
+                transactions.push(transaction)
+                localStorage.setItem("transactions", JSON.stringify(transactions))
+            })
+
+        3.2
+            const form = document.querySelector(".add");
+            let transactions = localStorage.getItem("transactions") !== null ? 
+                JSON.parse(localStorage.getItem("transactions")) : []; 
+
+            form.addEventListener("submit", event => {
+                event.preventDefault()
+                const time = new Date();
+                const transaction = {
+                    id: Math.floor(Math.random()*1000),
+                    source: form.source.value,
+                    amount: form.amount.value,
+                    time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+                };
+                
+                transactions.push(transaction)
+                localStorage.setItem("transactions", JSON.stringify(transactions))
+            })
+
+        Petite explication
+        Nous avons abordé deux sujets importants.
+
+        Que va-t-on stocker ? Quelles informations allons-nous stocker et comment allons-nous les récupérer ? 
+        Si vous comprenez cela, l'ensemble du projet vous paraîtra facile. 
+        C'est tout pour cette leçon.
+
+Video 5 : Income and Expense List 
+
+    Etape 1 : Creation de la fonction addTransaction
+        const form = document.querySelector(".add");
+        let transactions = localStorage.getItem("transactions") !== null ? 
+            JSON.parse(localStorage.getItem("transactions")) : []; 
+
+        // 
+        function addTransaction(source, amount) {
+            const time = new Date();
+            const transaction = {
+                id: Math.floor(Math.random()*1000),
+                source: source,
+                amount: amount,
+                time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+            };
+
+            transactions.push(transaction)
+            localStorage.setItem("transactions", JSON.stringify(transactions))
+        }
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            addTransaction(form.source.value, form.amount.value)
+            form.reset()
+        })
+
+    Etape 2 : Modification dans le DOM Income & Expense
+    // Ici, on rajoute la fonction addTransactionDOM pour ajouter dans notre income
+
+        2.1 Première modification 
+
+            const form          = document.querySelector(".add");
+
+            // Nouvelle variables incomeList & expenseList
+            const incomeList    = document.querySelector("ul.income-list"); 
+            const expenseList   = document.querySelector("ul.expense-list");
+
+            let transactions = localStorage.getItem("transactions") !== null ? 
+                JSON.parse(localStorage.getItem("transactions")) : []; 
+
+            // Ceci sera ajouter à notre DOM Income et Expense
+            function addTransactionDOM(id, source, amount, time){
+                if(amount > 0) {
+                    incomeList.innerHTML += `<li> ABC </li>`
+                } else {
+                    expenseList.innerHTML += `<li> ABC </li>`
+                }
+            }
+
+            function addTransaction(source, amount) {
+                const time = new Date();
+                const transaction = {
+                    // Essayer 100000 à la place 1000 mais avec 1000, l'id = [0,1000]
+                    id: Math.floor(Math.random()*1000),
+                    source: source,
+                    amount: amount,
+                    time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+                };
+
+                transactions.push(transaction)
+                localStorage.setItem("transactions", JSON.stringify(transactions))
+                addTransactionDOM(transaction.id, source, amount, transaction.time)
+            }
+
+            form.addEventListener("submit", event => {
+                event.preventDefault()
+                addTransaction(form.source.value, form.amount.value)
+                form.reset();
+            })
+
+        2.2 Deuxième modification 
+
+            const form          = document.querySelector(".add");
+            const incomeList    = document.querySelector("ul.income-list"); 
+            const expenseList   = document.querySelector("ul.expense-list");
+
+            let transactions = localStorage.getItem("transactions") !== null ? JSON.parse(localStorage.getItem("transactions")) : []; 
+
+            // fonction templateHTML
+            function generateTemplate(id, source, amount, time){
+                return `<li data-id="${id}">
+                            <p>
+                                <span>${source}</span>
+                                <span id="time">${time}</span>
+                            </p>
+
+                            // Il serait mieux de rajouter Math.abs() pour le montant
+                                // Math.abs() : retourne une valeur absolue d'un nb, et supprimer la valeur negatif
+                            // Nous allons toujours garder une valeur +
+                            $<span>${amount}</span>
+                            <i class="bi bi-trash delete"></i>
+                        </li>`
+            }
+
+            // Ceci sera ajouter à notre DOM Income et Expense
+            function addTransactionDOM(id, source, amount, time){
+                if(amount > 0) {
+                    incomeList.innerHTML += generateTemplate(id, source, amount, time)
+                } else {
+                    expenseList.innerHTML += generateTemplate(id, source, amount, time)
+                }
+            }
+
+            function addTransaction(source, amount) {
+                const time = new Date();
+                const transaction = {
+                    // Essayer 100000 à la place 1000 mais avec 1000, l'id = [0,1000]
+                    id: Math.floor(Math.random()*1000),
+                    source: source,
+                    amount: amount,
+                    time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+                };
+
+                transactions.push(transaction)
+                localStorage.setItem("transactions", JSON.stringify(transactions))
+                addTransactionDOM(transaction.id, source, amount, transaction.time)
+            }
+
+            form.addEventListener("submit", event => {
+                event.preventDefault()
+                addTransaction(form.source.value, form.amount.value)
+                form.reset();
+            })
+
+Video 6 : Get Transactions 
+    Ici, nous allons rajouter une fonction qui va recuperer nos transactions.
+    Il faudrait aussi supprimer dans notre HTML les "li" dans Transaction History, 
+        afin d'ajouter soi-même nos transactions et donc on va remettre HTML pour cela.
+
+    HTML : 
+        Ici, nous allons seulement supprimer le "li" dans Transaction.
+            Et, le reste du code ne change pas !
+            <body>
+                <main>
+                    <div class="outer-wrap">
+                        <div class="inner-wrap">
+                            <section class="heading"> ... </section>
+
+                            <section class="transaction-control"> ... </section>
+
+                            <section class="transaction-history">
+                                <h3>Transaction History</h3>
+                                <div class="records">
+                                    <div class="income">
+                                        <h3>Income</h3>
+                                        <ul class="income-list">
+
+                                        </ul>
+                                    </div>
+                                    <div class="expense">
+                                        <h3>Expense</h3>
+                                        <ul class="expense-list">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </main>        
+            </body>
+
+
+    JS : 
+
+        const form          = document.querySelector(".add");
+        const incomeList    = document.querySelector("ul.income-list"); 
+        const expenseList   = document.querySelector("ul.expense-list");
+
+        let transactions = localStorage.getItem("transactions") !== null ? JSON.parse(localStorage.getItem("transactions")) : []; 
+
+        function generateTemplate(id, source, amount, time){
+            return `<li data-id="${id}">
+                        <p>
+                            <span>${source}</span>
+                            <span id="time">${time}</span>
+                        </p>
+                        $<span>${Math.abs(amount)}</span>
+                        <i class="bi bi-trash delete"></i>
+                    </li>`
+        }
+
+        // Ceci sera ajouter à notre DOM Income et Expense
+        function addTransactionDOM(id, source, amount, time){
+            if(amount > 0) {
+                incomeList.innerHTML += generateTemplate(id, source, amount, time)
+            } else {
+                expenseList.innerHTML += generateTemplate(id, source, amount, time)
+            }
+        }
+
+        function addTransaction(source, amount) {
+            const time = new Date();
+            const transaction = {
+                // Essayer 100000 à la place 1000 mais avec 1000, l'id = [0,1000]
+                id: Math.floor(Math.random()*1000),
+                source: source,
+                amount: amount,
+                time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+            };
+
+            transactions.push(transaction)
+            localStorage.setItem("transactions", JSON.stringify(transactions))
+            addTransactionDOM(transaction.id, source, amount, transaction.time)
+        }
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            addTransaction(form.source.value, form.amount.value)
+            form.reset();
+        })
+
+        /* 
+            Cette fonction recupère la transaction. 
+            Si notre transaction.amout > 0
+                On mets dans income (revenu)
+            Sinon
+                On mets dans Expense 
+        */
+
+        function getTransaction() {
+            transactions.forEach(transaction => {
+                if(transaction.amount > 0) {
+                    incomeList.innerHTML += generateTemplate(transaction.id, transaction.source, transaction.amount, transaction.time);
+                } else {
+                    incomeList.innerHTML += generateTemplate(transaction.id, transaction.source, transaction.amount, transaction.time);
+                }
+
+            });
+        }
+        getTransaction();
+    
+    Petite explication :
+        Vous ne pouvez pas actualiser la page. Pourquoi ?
+
+        Parce que dès que nous chargeons la page, elle va accéder à la variable, accéder à toutes les informations de stockage local, elle va utiliser la boucle « for each », puis nous allons sélectionner le premier élément, quelque chose comme ça. Euh, ajoutez-le soit dans notre boucle de revenus, soit dans celle des dépenses, sélectionnez le deuxième élément, ajoutez-le dans mes revenus ou mes dépenses.
+
+        Si vous voyez le premier élément, supposons que nous sélectionnions ce numéro d'identification 41031 ou l'autre. Comme nous avons plusieurs éléments, nous allons les parcourir en boucle. L'autre chose importante que vous allez dire, c'est que si vous inspectez l'élément, chaque allié aura un identifiant de données unique,
+
+        car nous le générons de manière aléatoire. Si vous observez cela, c'est là qu'il va être utilisé. Maintenant, si je dois sélectionner un type de données, je suppose que je vais cliquer sur « Supprimer », je sais quel identifiant de données, quel identifiant de données je dois supprimer de mon stockage local.
+
+        Nous avons créé une fonction appelée « get transaction », qui effectue une étape simple. Maintenant, dans la suivante, nous devons comprendre comment supprimer quelque chose, car lorsque nous cliquons ici, nous ne devons pas seulement supprimer le I, mais nous devons également supprimer les informations de notre stockage local.
+
+        Traduit avec DeepL.com (version gratuite)
+
+Video 7 : Delete Transaction 
+    Maintenant, voyons comment supprimer des éléments. 
+    À ce stade, nous devons nous concentrer sur deux choses. 
+    La première concerne le moment où l'on clique sur l'icône de suppression. 
+    La seconde concerne la suppression effective de ces éléments de notre stockage local.
+
+    Testons si nous pouvons avoir accès quand on click sur l'icone detele
+
+    JS :
+        Tous les codes écrient avant, pas besoin de le prendre
+
+        Etape 1 : Teste d'accès au btn delete 
+
+            incomeList.addEventListener("click", event => {
+                if(event.target.classList.contains("delete")) {
+                    console.log(event.target)
+                }
+            })
+
+            expenseList.addEventListener("click", event => {
+                if(event.target.classList.contains("delete")) {
+                    console.log(event.target)
+                }
+            })
+
+        Etape 2 : On supprime de notre DOM 
+
+            incomeList.addEventListener("click", event => {
+                if(event.target.classList.contains("delete")) {
+                    // On recupère le parent de la classe pour supprimer les enfants
+                    event.target.parentElement.remove();
+                }
+            })
+
+            expenseList.addEventListener("click", event => {
+                if(event.target.classList.contains("delete")) {
+                    event.target.parentElement.remove();
+                }
+            })
+
+        Etape 3 : On supprime une transaction par son id 
+
+            3.1 Test pour recuperer et le voir dans le log
+                function deleteTransaction(id) {
+                    console.log(id);
+                }
+
+                incomeList.addEventListener("click", event => {
+                    if(event.target.classList.contains("delete")) {
+                        event.target.parentElement.remove();
+
+                        // dataset.id : permet d'acceder à l'id 
+                        deleteTransaction(event.target.parentElement.dataset.id)
+                    }
+                })
+                // cette fonction est Identique à income
+                expenseList.addEventListener("click", event => { ... })
+
+            3.2 Recupère l'id grâce à filter
+
+                // Si on ne convertir pas, il y aura erreur car l'id sera en string et integer
+                // Pourquoi ? Parce que JSON.stringify(...) converti en string !
+
+                // Comnvertir form.amount.value en nombre pour éviter l'envoie d'un string
+                form.addEventListener("submit", event => {
+                    event.preventDefault()
+                    addTransaction(form.source.value, Number(form.amount.value))
+                    form.reset();
+                })
+
+                // On va garder tous les éléments dans notre list quand on filtre sauf celui qu'on cherche.
+                function deleteTransaction(id) {
+                    transactions = transactions.filter(transaction => {
+                        return transaction.id !== id;
+                    })
+                    localStorage.setItem("transactions", JSON.stringify(transactions))
+                }
+
+                incomeList.addEventListener("click", event => {
+                    if(event.target.classList.contains("delete")) {
+                        event.target.parentElement.remove();
+
+                        // dataset.id : permet d'acceder à l'id et avec Number(...), on converti cela en integer
+                        deleteTransaction(Number(event.target.parentElement.dataset.id))
+                    }
+                })
+                // cette fonction est Identique à income
+                expenseList.addEventListener("click", event => { ... })
+
+Video 8 : Update Statistics 
+
+    Etape 1 : Test de la fonction dans JS et effacer valeur par defaut dans HTML
+
+        HTML : supp les valeurs dans notre HTML 
+
+            <section class="transaction-control">
+                <div class="actions">
+                    <h3> Add Transaction </h3>
+                    <form class="add">
+                        <input type="text" name="source" placeholder="Source" autocomplete="off">
+                        <input type="number" name="amount" placeholder="Amount" autocomplete="off">
+                        <input type="submit" value="Add Transaction">
+                    </form>
+                </div>
+
+                <div class="stats">
+                    <h3>Statistics</h3>
+                    <p class="balance">
+                        Balance: $<span id="balance"></span>
+                    </p>
+                    <p class="income">
+                        Income: $<span id="income"></span>
+                    </p>
+                    <p class="expense">
+                        Expense: $<span id="expense"></span>
+                    </p>
+                </div>
+            </section>
+
+        JS : 
+            // A rajouter dans la ^partie variable!
+            const balance = document.getElementById("balance")
+            const income = document.getElementById("income")
+            const expense = document.getElementById("expense")
+
+            // A rajouter vers la fin de fonction
+            function updateStatistics() {
+                const updatedIncome = transactions.filter(transaction => {
+                    return transaction.amount > 0
+                })
+                console.log(updatedIncome)
+                
+                const updatedExpense = transactions.filter(transaction => {
+                    return transaction.amount > 0
+                })
+                console.log(updatedExpense)
+            }
+            updateStatistics()
+
+    Etape 2 : On fait le calcul grâce à reduce 
+        JS :
+
+            2.1 Test 
+                function updateStatistics() {
+                    const updatedIncome = transactions
+                                            .filter(transaction => transaction.amount > 0)
+                                            .reduce((total, transaction) => total += transaction.amount, 0)
+
+                    const updatedExpense = transactions
+                                            .filter(transaction => transaction.amount < 0)
+                                            .reduce((total, transaction) => total += Math.abs(transaction.amount), 0)
+
+                }
+                updateStatistics()
+
+            2.2 Code complet qu'il faut ajouter dans les autres fonctions pour mettre à jour
+
+                function updateStatistics() {
+                    const updatedIncome = transactions
+                                            .filter(transaction => transaction.amount > 0)
+                                            .reduce((total, transaction) => total += transaction.amount, 0)
+
+                    const updatedExpense = transactions
+                                            .filter(transaction => transaction.amount < 0)
+                                            .reduce((total, transaction) => total += Math.abs(transaction.amount), 0)
+                    updatedBalance = updatedIncome - updatedExpense;
+                    balance.textContent = updatedBalance;
+                    income.textContent  = updatedIncome;
+                    expense.textContent = updatedExpense;
+                }
+                updateStatistics()
+
+                // Ajouter ici 
+                    form.addEventListener("submit", event => {
+                        event.preventDefault()
+                        addTransaction(form.source.value, Number(form.amount.value))
+                        updateStatistics() // mettre à jour après envoie
+                        form.reset();
+                    })
+
+                    // mettre à jour après suppression dans notre localStorage
+                    incomeList.addEventListener("click", event => {
+                        if(event.target.classList.contains("delete")) {
+                            event.target.parentElement.remove();
+                            deleteTransaction(Number(event.target.parentElement.dataset.id))
+                            updateStatistics() 
+                        }
+                    })
+
+                    expenseList.addEventListener("click", event => {
+                        if(event.target.classList.contains("delete")) {
+                            event.target.parentElement.remove();
+                            deleteTransaction(Number(event.target.parentElement.dataset.id))
+                            updateStatistics()
+                        }
+                    })
+
+Video 9 : What if empty transaction ?
+    Etape 1 : Ajouter un message d'alert ! 
+
+        // On va forcer l'utilisateur à écrire sinon il ne pourra rien faire d'autre
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            if(form.source.value.trim() === "" || form.amount.value.trim() === "" ) {
+                return alert("You must write some value for Source and Amount. Try again ☻ !")
+            }
+            addTransaction(form.source.value.trim(), Number(form.amount.value))
+            updateStatistics();
+            form.reset();
+        })
+
+    Etape 2 : Code complet JS 
+
+        const form          = document.querySelector(".add");
+        const incomeList    = document.querySelector("ul.income-list"); 
+        const expenseList   = document.querySelector("ul.expense-list");
+
+        const balance = document.getElementById("balance")
+        const income = document.getElementById("income")
+        const expense = document.getElementById("expense")
+
+        let transactions = localStorage.getItem("transactions") !== null ? JSON.parse(localStorage.getItem("transactions")) : []; 
+
+        function updateStatistics() {
+            const updatedIncome = transactions
+                                    .filter(transaction => transaction.amount > 0)
+                                    .reduce((total, transaction) => total += transaction.amount, 0)
+
+            const updatedExpense = transactions
+                                    .filter(transaction => transaction.amount < 0)
+                                    .reduce((total, transaction) => total += Math.abs(transaction.amount), 0)
+            updatedBalance = updatedIncome - updatedExpense;
+            balance.textContent = updatedBalance;
+            income.textContent  = updatedIncome;
+            expense.textContent = updatedExpense;
+        }
+        updateStatistics()
+
+        function generateTemplate(id, source, amount, time){
+            return `<li data-id="${id}">
+                        <p>
+                            <span>${source}</span>
+                            <span id="time">${time}</span>
+                        </p>
+                        $<span>${Math.abs(amount)}</span>
+                        <i class="bi bi-trash delete"></i>
+                    </li>`
+        }
+
+        // Ceci sera ajouter à notre DOM Income et Expense
+        function addTransactionDOM(id, source, amount, time){
+            if(amount > 0) {
+                incomeList.innerHTML += generateTemplate(id, source, amount, time)
+            } else {
+                expenseList.innerHTML += generateTemplate(id, source, amount, time)
+            }
+        }
+
+        function addTransaction(source, amount) {
+            const time = new Date();
+            const transaction = {
+                // Essayer 100000 à la place 1000 mais avec 1000, l'id = [0,1000]
+                id: Math.floor(Math.random()*1000),
+                source: source,
+                amount: amount,
+                time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`
+            };
+
+            transactions.push(transaction)
+            localStorage.setItem("transactions", JSON.stringify(transactions))
+            addTransactionDOM(transaction.id, source, amount, transaction.time)
+        }
+
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+            if(form.source.value.trim() === "" || form.amount.value.trim() === "" ) {
+                return alert("You must write some value for Source and Amount. Try again ☻ !")
+            }
+            addTransaction(form.source.value.trim(), Number(form.amount.value))
+            updateStatistics();
+            form.reset();
+        })
+
+        /* 
+            Cette fonction recupère la transaction. 
+            Si notre transaction.amout > 0
+                On mets dans income (revenu)
+            Sinon
+                On mets dans Expense 
+        */
+
+        function getTransaction() {
+            transactions.forEach(transaction => {
+                if(transaction.amount > 0) {
+                    incomeList.innerHTML += generateTemplate(transaction.id, transaction.source, transaction.amount, transaction.time);
+                } else {
+                    expenseList.innerHTML += generateTemplate(transaction.id, transaction.source, transaction.amount, transaction.time);
+                }
+
+            });
+        }
+        getTransaction();
+
+        incomeList.addEventListener("click", event => {
+            if(event.target.classList.contains("delete")) {
+                console.log(event.target)
+            }
+        })
+
+        expenseList.addEventListener("click", event => {
+            if(event.target.classList.contains("delete")) {
+                console.log(event.target)
+            }
+        })
+
+        function deleteTransaction(id) {
+            transactions = transactions.filter(transaction => {
+                return transaction.id !== id;
+            })
+            localStorage.setItem("transactions", JSON.stringify(transactions))
+        }
+
+        incomeList.addEventListener("click", event => {
+            if(event.target.classList.contains("delete")) {
+                event.target.parentElement.remove();
+                deleteTransaction(Number(event.target.parentElement.dataset.id))
+                updateStatistics()
+            }
+        })
+
+        expenseList.addEventListener("click", event => {
+            if(event.target.classList.contains("delete")) {
+                event.target.parentElement.remove();
+                deleteTransaction(Number(event.target.parentElement.dataset.id))
+                updateStatistics()
+            }
+        })

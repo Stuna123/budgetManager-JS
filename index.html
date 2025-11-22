@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Budget Manager </title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="finance_management_business.ico">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <div class="outer-wrap">
+                <div class="inner-wrap">
+                    <section class="heading">
+                        <p class="title"> Budget Manager </p>
+                        <p class="subtitle"> Easiest Way To Manage Your Transaction </p>
+                    </section>
+
+                    <section class="transaction-control">
+                        <div class="actions">
+                            <h3> Add Transaction </h3>
+                            <form class="add">
+                                <input type="text" name="source" placeholder="Source" title="Write something here" autocomplete="off" required>
+                                <input type="number" name="amount" placeholder="Amount" title="For expense, write negatif number" autocomplete="off" required>
+                                <input type="submit" value="Add Transaction" id="transaction">
+                                <input type="button" value="Cancel" id="cancelEdit" class="hidden">
+                            </form>
+                        </div>
+                        <div class="stats">
+                            <h3>Statistics</h3>
+                            <p class="balance">
+                                Balance: $<span id="balance">651</span>
+                            </p>
+                            <p class="income">
+                                Income: $<span id="income">700</span>
+                            </p>
+                            <p class="expense">
+                                Expenses: $<span id="expense">49</span>
+                            </p>
+                        </div>
+                        <div id="chartContainer">
+                            <canvas id="balanceChart"></canvas>
+                            <div id="noDataMessage">No transactionsto display.</div>
+                        </div>
+                    </section>
+
+                    <section class="transaction-history">
+                        <h3>Transaction History</h3>
+                        <div class="search-box">
+                            <input type="text" id="search" placeholder="Search transaction..." />
+                            <button id="resetSearch" title="Clear Search"> X </button>
+                        </div>
+                        
+                        <div class="records">
+                            <div class="income">
+                                <h3>Income</h3>
+                                <ul class="income-list">
+
+                                </ul>
+                            </div>
+                            <div class="expense">
+                                <h3>Expense</h3>
+                                <ul class="expense-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <script defer src="script.js"></script>    
+    </body>
+</html>
