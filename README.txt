@@ -1,4 +1,4 @@
-Résumé du projet (à mettre dans ton README ou à expliquer à quelqu’un) :
+Résumé du projet :
 
 Budget Tracker/Manager est une application web simple qui permet de gérer ses finances personnelles.
 L’utilisateur peut ajouter des revenus et des dépenses, 
